@@ -115,7 +115,7 @@ p {
 
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
 
   width: 100%;
   height: 4px;
@@ -146,8 +146,7 @@ p {
 .link-header:focus,
 .link-header.current {
   color: var(--accent-color);
-  fill: var(--accent-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--accent-color);  
 }
 
 /* Hero */
@@ -297,27 +296,23 @@ img {
   height: auto;
 }
 
-.description-overlay{
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 70px;
-  text-align: center;
-  background-color: rgba(47, 48, 58, 0.8);  
-}
 
 .description-title{
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;  
 
   width: 100%;
+  height: 70px;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
-  color: var(--secondary-text-color);  
+  color: var(--secondary-text-color); 
+  background-color: rgba(47, 48, 58, 0.8); 
 }
 
 /* Team */
@@ -597,7 +592,9 @@ border-radius: 4px;
 }
 
 .gallery-link:hover ::before,
-.gallery-link:hover .overlay-text{
+.gallery-link:focus ::before,
+.gallery-link:hover .overlay-text,
+.gallery-link:focus .overlay-text{
   transform: translateY(0);
 }
 
